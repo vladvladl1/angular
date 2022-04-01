@@ -1,0 +1,27 @@
+<form #myForm="ngForm" *ngIf="note">
+  <div class="form-group">
+    <label for="title">Title</label>
+    <textarea
+      name="title"
+      id="title"
+      rows="3"
+      [(ngModel)]="note.title"
+      required 
+      [minlength]="5"
+      #titleModel="ngModel"
+      #titleElement
+    ></textarea>
+    <p class="error" *ngIf="titleModel.invalid">{{titleElement.validationMessage}}</p>
+  </div>
+  <div class="form-group inline">
+    <label for="completed">Completed</label>
+    <input
+      type="checkbox"
+      name="completed"
+      id="completed"
+      [(ngModel)]="note.completed"
+    />
+  </div>
+
+  <button type="button" [disabled]="myForm.invalid">Save</button>
+</form>

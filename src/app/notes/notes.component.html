@@ -1,0 +1,18 @@
+<h1>Notes</h1>
+
+<table *ngIf="notes">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Title</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let note of notes" [routerLink]="note.id.toString()">
+			<td>{{ note.id }}</td>
+			<td>{{ note.title }}</td>
+			<td><span *ngIf="note.completed">✅</span></td>
+		</tr>
+	</tbody>
+</table>

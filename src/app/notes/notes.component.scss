@@ -1,0 +1,21 @@
+table {
+  border-collapse: collapse;
+
+  tbody tr {
+    cursor: pointer;
+
+    &:hover {
+      background-color: whitesmoke;
+    }
+  }
+
+  th {
+    text-align: start;
+  }
+
+  td,
+  th {
+    border: 1px solid gray;
+    padding: 6px 10px;
+  }
+}
